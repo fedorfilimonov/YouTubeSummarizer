@@ -6,8 +6,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "youtube-captions-scraper": "^1.1.0"
+  "cors": "^2.8.5",
+  "express": "^4.18.2",
+  "@bochilteam/scraper": "^1.1.2"
   }
 }
