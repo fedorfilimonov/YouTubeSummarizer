@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { getSubtitles } = require('youtube-captions-scraper');
+const { ytTranscript } = require('@bochilteam/scraper');
 
 const app = express();
 app.use(cors());
@@ -12,11 +12,7 @@ app.get('/transcript', async (req, res) => {
   }
 
   try {
-    const transcript = await getSubtitles({
-      videoID: videoId,
-      lang: 'en' // or 'auto'
-    });
-
+    const transcript = await ytTranscript(videoId);
     const textOnly = transcript.map(line => line.text).join(' ');
     res.json({ transcript: textOnly });
   } catch (err) {
@@ -26,5 +22,5 @@ app.get('/transcript', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`✅ Transcript API running on port ${PORT}`);
+  console.log(`✅ YouTube Transcript API is live on port ${PORT}`);
 });
