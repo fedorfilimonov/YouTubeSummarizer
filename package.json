@@ -1,13 +1,17 @@
 {
   "name": "youtube-transcript-server",
   "version": "1.0.0",
+  "description": "Backend service to fetch YouTube video transcripts",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-  "cors": "^2.8.5",
-  "express": "^4.18.2",
-  "@bochilteam/scraper": "^1.1.2"
+    "@bochilteam/scraper": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
